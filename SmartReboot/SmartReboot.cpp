@@ -8,8 +8,8 @@
 
 #define MAX_KEY_LENGTH 255
 #define MAX_VALUE_NAME 16383
-using namespace std;
-void QueryKey(HKEY hKey) {
+
+void ExecFilteredPrograms(HKEY hKey) {
 	TCHAR    achKey[MAX_KEY_LENGTH];   // buffer for subkey name
 	DWORD    cbName;                   // size of name string 
 	TCHAR    achClass[MAX_PATH] = TEXT("");  // buffer for class name 
@@ -74,8 +74,7 @@ void QueryKey(HKEY hKey) {
 				for (auto key_word : black_list) {
 					if (key.find(key_word) == string::npos && value.find(key_word) == string::npos) {
 						isFiltered = true;
-					}
-					else {
+					} else {
 						isFiltered = false;
 						break;
 					}
@@ -109,14 +108,12 @@ int _tmain(int argc, _TCHAR* argv[]){
 	LONG dwRegOPenKey_1 = RegOpenKeyEx(HKEY_LOCAL_MACHINE, _T("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\"), 0, KEY_READ, &hKey_1);
 	HKEY hKey_2;
 	LONG dwRegOPenKey_2 = RegOpenKeyEx(HKEY_CURRENT_USER, _T("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"), 0, KEY_READ, &hKey_2);
-	if (dwRegOPenKey_1 == ERROR_SUCCESS || dwRegOPenKey_2 == ERROR_SUCCESS){
-		QueryKey(hKey_1);
-		QueryKey(hKey_2);
-	}
-	else if (dwRegOPenKey_1 != ERROR_SUCCESS) {
+	if (dwRegOPenKey_1 == ERROR_SUCCESS || dwRegOPenKey_2 == ERROR_SUCCESS) {
+		ExecFilteredPrograms(hKey_1);
+		ExecFilteredPrograms(hKey_2);
+	} else if (dwRegOPenKey_1 != ERROR_SUCCESS) {
 		printf("RegOpenKeyEx failed, error code %d\n", dwRegOPenKey_1);
-	}
-	else if (dwRegOPenKey_2 != ERROR_SUCCESS) {
+	} else if (dwRegOPenKey_2 != ERROR_SUCCESS) {
 		printf("RegOpenKeyEx failed, error code %d\n", dwRegOPenKey_2);
 	}
 	RegCloseKey(hKey_1);

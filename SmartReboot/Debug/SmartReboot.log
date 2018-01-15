@@ -1,6 +1,8 @@
-﻿Build started 15.01.2018 19:16:37.
+﻿Build started 15.01.2018 19:40:47.
      1>Project "C:\Users\Аманжол\Documents\Visual Studio 2012\Projects\SmartReboot\SmartReboot\SmartReboot.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
+         D:\VS\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\SmartReboot.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
          D:\VS\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\SmartReboot.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SmartReboot.cpp
          SmartReboot.cpp
      1>c:\users\аманжол\documents\visual studio 2012\projects\smartreboot\smartreboot\smartreboot.cpp(14): warning C4101: 'cbName' : unreferenced local variable
@@ -13,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.62
+Time Elapsed 00:00:03.47
