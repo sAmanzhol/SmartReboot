@@ -1,0 +1,5 @@
+phone
+Sublime
+home
+git
+DAEMON
