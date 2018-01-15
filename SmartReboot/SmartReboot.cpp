@@ -45,7 +45,7 @@ void ExecFilteredPrograms(HKEY hKey) {
 
 	BYTE* buffer = new BYTE[cbMaxValueData];
 	ZeroMemory(buffer, cbMaxValueData);
-	wifstream black_list_file("example.txt");
+	wifstream black_list_file("black_list.txt");
 	wstring str;
 	list<wstring> black_list;
 	bool isFiltered = false;
